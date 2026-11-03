@@ -99,13 +99,19 @@ body {
 }
 
 .cover {
-  background: linear-gradient(135deg, #79252e, #57151f 65%, #421017);
+  background: linear-gradient(
+    135deg,
+    #b52b38 0%,
+    #991c2a 50%,
+    #741421 100%
+  ) !important;
+
   color: #e8d5b1;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-left: 9px solid #390e16;
+  border-left: 9px solid #65101b;
   padding: 25px;
 }
 
