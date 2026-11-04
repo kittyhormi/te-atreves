@@ -99,13 +99,15 @@ body {
 }
 
 .cover {
-  background: linear-gradient(
-    135deg,
-    #b52b38 0%,
-    #991c2a 50%,
-    #741421 100%
-  ) !important;
-
+  background: #e52230 !important;
+  color: #171313;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-left: 9px solid #65101b;
+  padding: 25px;
+}
   color: #e8d5b1;
   display: flex;
   align-items: center;
@@ -132,14 +134,15 @@ body {
 
 .cover h2 {
   font-family: 'Permanent Marker', cursive;
-  font-size: 43px;
+  font-size: 25px;
   font-weight: 400;
-  color: #321014;
+  color: #171313;
   text-align: center;
-  transform: rotate(-4deg);
-  letter-spacing: -1px;
+  letter-spacing: 0;
   margin: 0;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+  padding: 0;
+  transform: none;
+  text-shadow: none;
 }
 
 .cover .cover-subtitle {
