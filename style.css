@@ -488,13 +488,23 @@ footer {
 
 .dialogo.uno {
   font-family: "Odeng", "Caveat", cursive;
-  font-size: clamp(14px, 3.4vw, 17px);
   line-height: 1.5;
 }
 
 .dialogo.dos {
   font-family: "DrmHandwritten", "Patrick Hand", cursive;
-  font-size: clamp(17px, 4.4vw, 21px);
   line-height: 1.4;
   -webkit-text-stroke: 0.4px #171313;
 }
+
+.tam-g .dialogo.uno { font-size: clamp(17px, 4.6vw, 24px); }
+.tam-g .dialogo.dos { font-size: clamp(21px, 5.8vw, 30px); }
+
+.tam-m .dialogo.uno { font-size: clamp(15px, 3.9vw, 20px); }
+.tam-m .dialogo.dos { font-size: clamp(18px, 4.9vw, 25px); }
+
+.tam-p .dialogo.uno { font-size: clamp(14px, 3.5vw, 18px); }
+.tam-p .dialogo.dos { font-size: clamp(17px, 4.4vw, 22px); }
+
+.tam-xp .dialogo.uno { font-size: clamp(14px, 3.4vw, 17px); }
+.tam-xp .dialogo.dos { font-size: clamp(17px, 4.4vw, 21px); }
