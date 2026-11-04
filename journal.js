@@ -41,15 +41,11 @@ function crearPortada() {
   return `
     <div class="page cover" data-density="hard">
       <div class="cover-inner">
-        <div class="ornament">✦</div>
         <h2>¿Te atreves?</h2>
-        <p class="cover-subtitle">A little mystery awaits...</p>
-        <div class="bottom-ornament">✧ ✦ ✧</div>
       </div>
     </div>
   `;
 }
-
 function crearPaginaInicial() {
   return `
     <div class="page">
