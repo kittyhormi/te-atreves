@@ -61,7 +61,10 @@ function crearPaginaInicial() {
         <p class="riddle-blanks">
           <span class="blank"><span>s</span><span>o</span><span>l</span><span>o</span></span>
           <span class="blank"><span>e</span><span>s</span><span>t</span><span>a</span></span>
-          <span class="word-underline">navidad</span>
+        </p>
+
+        <p class="riddle-blanks">
+          <span class="blank"><span>n</span><span>a</span><span>v</span><span>i</span><span>d</span><span>a</span><span>d</span></span>
           <span>?</span>
         </p>
 
