@@ -508,3 +508,80 @@ footer {
 
 .tam-xp .dialogo.uno { font-size: clamp(16px, 4vw, 20px); }
 .tam-xp .dialogo.dos { font-size: clamp(18px, 4.6vw, 23px); }
+#book .page.pagina-arrancada {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 32%),
+    #cdb88f;
+}
+
+.resto-sombra {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 14%;
+  filter: drop-shadow(3px 0 3px rgba(0, 0, 0, 0.35));
+}
+
+.resto-papel {
+  width: 100%;
+  height: 100%;
+  background: var(--cream);
+  clip-path: polygon(
+    0 0, 100% 0, 78% 6%, 96% 13%, 70% 21%, 92% 29%, 74% 37%,
+    98% 45%, 72% 53%, 94% 61%, 76% 69%, 97% 77%, 71% 85%,
+    93% 92%, 80% 100%, 0 100%
+  );
+}
+
+.foto-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.6s ease;
+  cursor: pointer;
+}
+
+.foto-overlay.activa {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.foto-caja {
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.55));
+  opacity: 0;
+  transform-origin: center;
+}
+
+.foto-caja img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 82vh;
+  max-width: 88vw;
+  border: 7px solid #f4efe6;
+}
+
+.foto-caja.cayendo {
+  animation: fotoCae 1.7s cubic-bezier(0.35, 0.55, 0.4, 1) forwards;
+}
+
+.foto-caja.cerrando {
+  animation: fotoCierra 0.5s ease-in forwards;
+}
+
+@keyframes fotoCae {
+  0%   { opacity: 1; transform: translate(-6vw, -115vh) rotate(-30deg); }
+  35%  { opacity: 1; transform: translate(7vw, -25vh) rotate(14deg); }
+  60%  { opacity: 1; transform: translate(-4vw, 5vh) rotate(-9deg); }
+  80%  { opacity: 1; transform: translate(2vw, -1vh) rotate(4deg); }
+  100% { opacity: 1; transform: translate(0, 0) rotate(-2deg); }
+}
+
+@keyframes fotoCierra {
+  from { opacity: 1; transform: translate(0, 0) rotate(-2deg); }
+  to   { opacity: 0; transform: translate(0, 25vh) rotate(8deg); }
+}
