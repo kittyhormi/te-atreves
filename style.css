@@ -140,16 +140,28 @@ body {
 }
 
 .riddle-blanks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px 18px;
   font-family: "DrmHandwritten", "Patrick Hand", cursive;
   font-size: 34px;
-  line-height: 1.8;
+  line-height: 1;
+  -webkit-text-stroke: 0.6px #171313;
 }
+
 .blank {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.blank span {
   display: inline-block;
-  border-bottom: 3px dashed #171313;
-  padding: 0 4px 3px;
-  margin: 0 6px;
-  letter-spacing: 6px;
+  width: 0.8em;
+  text-align: center;
+  border-bottom: 3px solid #171313;
+  padding-bottom: 3px;
 }
 
 .word-underline {
