@@ -444,22 +444,6 @@ function iniciarCuaderno() {
   });
 }
 
-  if (typeof St === "undefined" || !St.PageFlip) {
-    console.error("PageFlip no se pudo cargar.");
-    counter.textContent = "Error al cargar";
-    return;
-  }
-
- function construirCuaderno() {
-  const paginas = [
-    crearPortada(),
-    crearPaginaInicial(),
-    crearPaginaPistas(),
-    ...paginasDialogo.slice(0, -1).map(crearPaginaDialogo),
-    crearPaginaArrancada(),
-    crearContraportada()
-  ];
-
   bookElement.innerHTML = paginas.join("");
 }
 
