@@ -166,11 +166,9 @@ body {
 .word-underline {
   font-size: 30px;
   -webkit-text-stroke: 0.8px #171313;
-  padding-bottom: 3px;
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
+  text-decoration: none;
+  border-bottom: 3px solid #171313;
+  padding: 0 6px 3px;
 }
 .riddle-label {
   align-self: flex-start;
