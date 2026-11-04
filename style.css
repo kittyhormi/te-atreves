@@ -156,16 +156,16 @@ body {
 }
 
 .handwriting {
-  font-family: "Caveat", cursive;
-  font-size: 25px;
-  line-height: 1.35;
+  font-family: "Odeng", "Caveat", cursive;
+  font-size: 22px;
+  line-height: 1.4;
   color: var(--ink);
   white-space: pre-wrap;
 }
 
 .handwriting.writer-two {
-  font-family: "Patrick Hand", cursive;
-  font-size: 23px;
+  font-family: "DrmHandwritten", "Patrick Hand", cursive;
+  font-size: 27px;
   color: #292929;
 }
 
@@ -285,13 +285,12 @@ footer {
   }
 
   .handwriting {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .handwriting.writer-two {
-    font-size: 21px;
+    font-size: 24px;
   }
-
   .cover-inner {
     padding: 35px 12px;
   }
