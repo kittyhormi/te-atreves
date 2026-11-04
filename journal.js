@@ -77,6 +77,39 @@ function crearPaginaInicial() {
     </div>
   `;
 }
+function crearPaginaPistas() {
+  return `
+    <div class="page">
+      <div class="page-content plain clues-page">
+        <p class="riddle-clue">
+          2. hay historias de amor que terminan antes de empezar.. busca los apellidos que nunca debieron estar juntos. 141, 2, 11
+        </p>
+
+        <p class="riddle-clue">
+          3. algunos reciben regalos, otros reciben visitas inesperadas. encuentra al que tuvo tres para aprender el verdadero significado de estas fechas. 24, 1, 15
+        </p>
+
+        <p class="riddle-clue">
+          4. espero que no te de verguenza pues la siguiente pista esta en la seccion para adultos de la libreria, busca el best seller del mes. 40, 5, 2. (por cierto, si te interesa este libro en particular.. y solo ese tema del que se habla, puedes dejar el cuaderno, no seremos compatibles..)
+        </p>
+
+        <p class="riddle-clue">
+          5. ya casi terminas!! para conseguir la ultima palabra debo saber.. eres valiente? conoces la cancion que lleva una invitacion por titulo? muy popular en esta epoca. recita su estribillo completo en el escenario para lectura.. cuando termines encontraras la ultima palabra
+        </p>
+      </div>
+    </div>
+  `;
+}
+
+function crearPaginaVacia(numero) {
+  return `
+    <div class="page">
+      <div class="page-content">
+        <div class="page-number">${numero}</div>
+      </div>
+    </div>
+  `;
+}
 function crearEntrada(entrada, numero) {
   const clase = entrada.autor === "personaje1"
     ? "writer-one"
@@ -104,9 +137,11 @@ function construirCuaderno() {
   const paginas = [
     crearPortada(),
     crearPaginaInicial(),
+    crearPaginaPistas(),
     ...entradas.map((entrada, index) =>
-      crearEntrada(entrada, index + 2)
+      crearEntrada(entrada, index + 3)
     ),
+    crearPaginaVacia(entradas.length + 3),
     crearContraportada()
   ];
 
