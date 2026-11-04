@@ -323,6 +323,59 @@ function revisarHojaSuelta(numero) {
     setTimeout(soltarHoja, 400);
   }
 }
+let imagenMostrada = false;
+
+function crearPaginaArrancada() {
+  return `
+    <div class="page pagina-arrancada">
+      <div class="resto-sombra">
+        <div class="resto-papel"></div>
+      </div>
+    </div>
+  `;
+}
+
+function soltarImagenFinal() {
+  const overlay = document.createElement("div");
+  overlay.className = "foto-overlay";
+  overlay.innerHTML = `
+    <div class="foto-caja">
+      <img src="noche.jpg" alt="Noche buena pero muy mala, 2:00 am">
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  const caja = overlay.querySelector(".foto-caja");
+  let lista = false;
+
+  requestAnimationFrame(() => {
+    overlay.classList.add("activa");
+    caja.classList.add("cayendo");
+  });
+
+  setTimeout(() => { lista = true; }, 1900);
+
+  overlay.addEventListener("click", () => {
+    if (!lista) return;
+    lista = false;
+    overlay.classList.remove("activa");
+    caja.classList.remove("cayendo");
+    caja.classList.add("cerrando");
+    setTimeout(() => overlay.remove(), 600);
+  });
+}
+
+function revisarImagenFinal(numero) {
+  if (imagenMostrada || !pageFlip) return;
+  const total = pageFlip.getPageCount();
+  const vertical = pageFlip.getOrientation && pageFlip.getOrientation() === "portrait";
+  const objetivo = vertical ? total - 2 : total - 3;
+
+  if (numero >= objetivo) {
+    imagenMostrada = true;
+    setTimeout(soltarImagenFinal, 500);
+  }
+}
 function iniciarCuaderno() {
   if (!bookElement) {
     console.error("No se encontró el elemento #book");
@@ -335,25 +388,18 @@ function iniciarCuaderno() {
     return;
   }
 
-  construirCuaderno();
+ function construirCuaderno() {
+  const paginas = [
+    crearPortada(),
+    crearPaginaInicial(),
+    crearPaginaPistas(),
+    ...paginasDialogo.slice(0, -1).map(crearPaginaDialogo),
+    crearPaginaArrancada(),
+    crearContraportada()
+  ];
 
-  pageFlip = new St.PageFlip(bookElement, {
-    width: 400,
-    height: 560,
-    size: "stretch",
-    minWidth: 280,
-    maxWidth: 430,
-    minHeight: 390,
-    maxHeight: 600,
-    showCover: true,
-    usePortrait: true,
-    flippingTime: 1000,
-    maxShadowOpacity: 0.45,
-    drawShadow: true,
-    mobileScrollSupport: false,
-    useMouseEvents: true,
-    startPage: 0
-  });
+  bookElement.innerHTML = paginas.join("");
+}
 
   pageFlip.loadFromHTML(
     bookElement.querySelectorAll(".page")
@@ -362,6 +408,7 @@ function iniciarCuaderno() {
    pageFlip.on("flip", event => {
     actualizarControles(event.data);
     revisarHojaSuelta(event.data);
+    revisarImagenFinal(event.data);
   });
 
   bookElement.style.visibility = "visible";
