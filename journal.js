@@ -41,7 +41,7 @@ function crearPortada() {
   return `
     <div class="page cover" data-density="hard">
       <div class="cover-inner">
-        <h2>¿Te atreves?</h2>
+        <h2>Te atreves?</h2>
       </div>
     </div>
   `;
