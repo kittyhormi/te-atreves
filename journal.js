@@ -158,7 +158,48 @@ function actualizarControles(numero) {
   prevButton.disabled = numero === 0;
   nextButton.disabled = numero >= total - 1;
 }
+let hojaMostrada = false;
 
+function soltarHoja() {
+  const overlay = document.createElement("div");
+  overlay.className = "hoja-overlay";
+  overlay.innerHTML = `
+    <div class="hoja-caja">
+      <img src="hoja.jpg" alt="Hoja suelta con el estribillo">
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  const caja = overlay.querySelector(".hoja-caja");
+  let abierta = false;
+
+  requestAnimationFrame(() => {
+    overlay.classList.add("activa");
+    caja.classList.add("cayendo");
+  });
+
+  setTimeout(() => {
+    caja.classList.remove("cayendo");
+    caja.classList.add("abriendo");
+    setTimeout(() => { abierta = true; }, 1300);
+  }, 1200);
+
+  overlay.addEventListener("click", () => {
+    if (!abierta) return;
+    abierta = false;
+    overlay.classList.remove("activa");
+    caja.classList.remove("abriendo");
+    caja.classList.add("cerrando");
+    setTimeout(() => overlay.remove(), 600);
+  });
+}
+
+function revisarHojaSuelta(numero) {
+  if (!hojaMostrada && numero >= 3) {
+    hojaMostrada = true;
+    setTimeout(soltarHoja, 400);
+  }
+}
 function iniciarCuaderno() {
   if (!bookElement) {
     console.error("No se encontró el elemento #book");
@@ -195,8 +236,9 @@ function iniciarCuaderno() {
     bookElement.querySelectorAll(".page")
   );
 
-  pageFlip.on("flip", event => {
+   pageFlip.on("flip", event => {
     actualizarControles(event.data);
+    revisarHojaSuelta(event.data);
   });
 
   bookElement.style.visibility = "visible";
