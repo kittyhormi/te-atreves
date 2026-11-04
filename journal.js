@@ -53,15 +53,16 @@ function crearPaginaInicial() {
         <p class="riddle-question">puedes descifrar la pregunta?</p>
 
         <p class="riddle-blanks">
-          <span class="blank">v a s</span>
-          <span class="blank">a</span>
-          <span class="blank">e s t a r</span>
+          <span class="blank"><span>v</span><span>a</span><span>s</span></span>
+          <span class="blank"><span>a</span></span>
+          <span class="blank"><span>e</span><span>s</span><span>t</span><span>a</span><span>r</span></span>
         </p>
 
         <p class="riddle-blanks">
-          <span class="blank">s o l o</span>
-          <span class="blank">e s t a</span>
-          <span class="word-underline">navidad</span> ?
+          <span class="blank"><span>s</span><span>o</span><span>l</span><span>o</span></span>
+          <span class="blank"><span>e</span><span>s</span><span>t</span><span>a</span></span>
+          <span class="word-underline">navidad</span>
+          <span>?</span>
         </p>
 
         <p class="riddle-label">pistas :</p>
