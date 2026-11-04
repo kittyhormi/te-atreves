@@ -382,6 +382,68 @@ function iniciarCuaderno() {
     return;
   }
 
+  if (
+    typeof St === "undefined" ||
+    !St.PageFlip
+  ) {
+    console.error("PageFlip no se pudo cargar.");
+    if (counter) counter.textContent = "Error al cargar";
+    return;
+  }
+
+  // Construir las páginas antes de inicializar PageFlip
+  const paginas = [
+    crearPortada(),
+    crearPaginaInicial(),
+    crearPaginaPistas(),
+    ...paginasDialogo.slice(0, -1).map(crearPaginaDialogo),
+    crearPaginaArrancada(),
+    crearContraportada()
+  ];
+
+  bookElement.innerHTML = paginas.join("");
+
+  // Crear la instancia de PageFlip
+  pageFlip = new St.PageFlip(bookElement, {
+    width: 400,
+    height: 600,
+    size: "stretch",
+    minWidth: 300,
+    maxWidth: 1000,
+    minHeight: 400,
+    maxHeight: 1500,
+    showCover: true,
+    flippingTime: 1000,
+    usePortrait: true,
+    startPage: 0,
+    autoSize: true
+  });
+
+  pageFlip.loadFromHTML(
+    bookElement.querySelectorAll(".page")
+  );
+
+  pageFlip.on("flip", event => {
+    actualizarControles(event.data);
+    revisarHojaSuelta(event.data);
+    revisarImagenFinal(event.data);
+  });
+
+  bookElement.style.visibility = "visible";
+
+  actualizarControles(0);
+
+  bookElement.addEventListener("click", event => {
+    if (
+      pageFlip &&
+      pageFlip.getCurrentPageIndex() === 0 &&
+      event.target.closest(".cover")
+    ) {
+      pageFlip.flipNext();
+    }
+  });
+}
+
   if (typeof St === "undefined" || !St.PageFlip) {
     console.error("PageFlip no se pudo cargar.");
     counter.textContent = "Error al cargar";
