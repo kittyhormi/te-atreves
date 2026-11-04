@@ -124,18 +124,19 @@ body {
   justify-content: center;
   text-align: center;
 }
-
 .cover h2 {
   font-family: "Odeng", "Permanent Marker", cursive;
   font-size: clamp(22px, 4.5vw, 30px);
   font-weight: 400;
   line-height: 1.1;
   color: #171313;
+  -webkit-text-stroke: 0.7px #171313;
+  opacity: 0.93;
   text-align: center;
-  letter-spacing: 0;
+  letter-spacing: 0.5px;
   margin: 0;
   padding: 0;
-  transform: none;
+  transform: rotate(-1.5deg);
   text-shadow: none;
 }
 .inside-title {
