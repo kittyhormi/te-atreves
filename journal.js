@@ -444,34 +444,6 @@ function iniciarCuaderno() {
   });
 }
 
-  bookElement.innerHTML = paginas.join("");
-}
-
-  pageFlip.loadFromHTML(
-    bookElement.querySelectorAll(".page")
-  );
-
-   pageFlip.on("flip", event => {
-    actualizarControles(event.data);
-    revisarHojaSuelta(event.data);
-    revisarImagenFinal(event.data);
-  });
-
-  bookElement.style.visibility = "visible";
-
-  actualizarControles(0);
-
-  bookElement.addEventListener("click", event => {
-    if (
-      pageFlip &&
-      pageFlip.getCurrentPageIndex() === 0 &&
-      event.target.closest(".cover")
-    ) {
-      pageFlip.flipNext();
-    }
-  });
-}
-
 nextButton.addEventListener("click", () => {
   if (pageFlip) pageFlip.flipNext();
 });
