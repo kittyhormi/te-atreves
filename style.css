@@ -116,11 +116,12 @@ body {
 }
 
 .cover-inner {
-  border: 1px solid rgba(230, 207, 163, 0.65);
-  outline: 1px solid rgba(230, 207, 163, 0.3);
-  outline-offset: 7px;
-  padding: 50px 18px;
-  width: 90%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .cover .ornament {
@@ -130,10 +131,15 @@ body {
 }
 
 .cover h2 {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(30px, 5vw, 43px);
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 43px;
+  font-weight: 400;
+  color: #321014;
+  text-align: center;
+  transform: rotate(-4deg);
+  letter-spacing: -1px;
+  margin: 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
 }
 
 .cover .cover-subtitle {
