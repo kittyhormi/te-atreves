@@ -474,3 +474,27 @@ footer {
     transform: translateY(20vh) rotate(6deg) scale(0.9);
   }
 }
+.page-content.plain.dialogo-page {
+  justify-content: center;
+  gap: 16px;
+  padding: 34px 30px;
+  overflow: hidden;
+}
+
+.dialogo {
+  color: #171313;
+  white-space: normal;
+}
+
+.dialogo.uno {
+  font-family: "Odeng", "Caveat", cursive;
+  font-size: clamp(14px, 3.4vw, 17px);
+  line-height: 1.5;
+}
+
+.dialogo.dos {
+  font-family: "DrmHandwritten", "Patrick Hand", cursive;
+  font-size: clamp(17px, 4.4vw, 21px);
+  line-height: 1.4;
+  -webkit-text-stroke: 0.4px #171313;
+}
