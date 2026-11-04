@@ -99,22 +99,14 @@ body {
 }
 
 .cover {
-  background: #e52230 !important;
+  background: #991c2a !important;
   color: #171313;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-left: 9px solid #65101b;
-  padding: 25px;
-}
-  color: #e8d5b1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-left: 9px solid #65101b;
-  padding: 25px;
+  padding: 0 9px 0 0;
 }
 
 .cover-inner {
@@ -126,16 +118,11 @@ body {
   text-align: center;
 }
 
-.cover .ornament {
-  font-size: 23px;
-  margin-bottom: 25px;
-  color: #d8bc8e;
-}
-
 .cover h2 {
   font-family: 'Permanent Marker', cursive;
-  font-size: 25px;
+  font-size: clamp(30px, 8vw, 46px);
   font-weight: 400;
+  line-height: 1.1;
   color: #171313;
   text-align: center;
   letter-spacing: 0;
@@ -143,19 +130,6 @@ body {
   padding: 0;
   transform: none;
   text-shadow: none;
-}
-
-.cover .cover-subtitle {
-  font-family: "Caveat", cursive;
-  font-size: 22px;
-  margin-top: 20px;
-  color: #e0cba9;
-}
-
-.cover .bottom-ornament {
-  margin-top: 35px;
-  letter-spacing: 8px;
-  font-size: 13px;
 }
 
 .inside-title {
