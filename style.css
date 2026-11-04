@@ -497,7 +497,14 @@ footer {
   -webkit-text-stroke: 0.6px #171313;
 }
 
+.tam-g .dialogo.uno { font-size: clamp(20px, 5.4vw, 28px); }
 .tam-g .dialogo.dos { font-size: clamp(24px, 6.4vw, 34px); }
+
+.tam-m .dialogo.uno { font-size: clamp(18px, 4.7vw, 24px); }
 .tam-m .dialogo.dos { font-size: clamp(21px, 5.6vw, 29px); }
+
+.tam-p .dialogo.uno { font-size: clamp(17px, 4.3vw, 22px); }
 .tam-p .dialogo.dos { font-size: clamp(19px, 5vw, 25px); }
+
+.tam-xp .dialogo.uno { font-size: clamp(16px, 4vw, 20px); }
 .tam-xp .dialogo.dos { font-size: clamp(18px, 4.6vw, 23px); }
