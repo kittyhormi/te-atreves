@@ -33,7 +33,6 @@ const entradas = [
 /* 2. ELEMENTOS */
 
 const bookElement = document.getElementById("book");
-const openButton = document.getElementById("openBook");
 const nextButton = document.getElementById("nextPage");
 const prevButton = document.getElementById("prevPage");
 const counter = document.getElementById("pageCounter");
@@ -174,10 +173,6 @@ function actualizarControles(numero) {
   prevButton.disabled = numero === 0;
   nextButton.disabled = numero >= total - 1;
 
-  openButton.style.display =
-    numero === 0 ? "block" : "none";
-}
-
 
 /* 10. INICIAR CUADERNO */
 
@@ -188,6 +183,16 @@ function iniciarCuaderno() {
     counter.textContent = "Error al cargar";
     return;
   }
+   bookElement.addEventListener("click", (event) => {
+  if (!pageFlip) return;
+
+  if (
+    pageFlip.getCurrentPageIndex() === 0 &&
+    event.target.closest(".cover")
+  ) {
+    pageFlip.flipNext();
+  }
+});
 
   construirCuaderno();
 
@@ -234,10 +239,6 @@ function iniciarCuaderno() {
 
 
 /* 11. BOTÓN ABRIR */
-
-openButton.addEventListener("click", () => {
-  if (pageFlip) pageFlip.flipNext();
-});
 
 
 /* 12. FLECHAS */
