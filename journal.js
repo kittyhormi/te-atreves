@@ -161,17 +161,18 @@ const paginasDialogo = [
     ["2", `dime armando:`],
     ["2", `que quieres para navidad?`]
   ],
-  // Página 7 (izquierda, los dos personajes)
+  // Página 7 (izquierda)
   [
     ["1", `que quiero para navidad?`],
     ["1", `quiero saber mas de ti, chico misterioso.`],
-    ["1", `llevame a un lugar especial, alguna parte de la ciudad que se sienta como tu.`],
+    ["1", `llevame a un lugar especial, alguna parte de la ciudad que se sienta como tu.`]
+  ],
+  // Página 8 (derecha)
+  [
     ["2", `lo que se siente mas "como yo" no es un lugar, armando.. es un momento.`],
     ["2", `ve a la central, antes de que llegue el primer tren, ya se que es muy temprano pero te prometo que vale completamente la pena.`],
     ["2", `hay muy pocos momentos en que la ciudad parece estar completamente quieta. . dime que ves`]
   ],
-  // Página 8 (derecha, en blanco)
-  [],
   // Página 9 (izquierda)
   [
     ["1", `veo las figuras sobre las ventanas, sigue estando muy oscuro afuera pero aqui adentro parece estar iluminado por las estrellas.. el mundo se siente tan grande pero tan pequeño. y tan mio.`]
@@ -238,8 +239,13 @@ const paginasDialogo = [
   // Página 20 (derecha, en blanco)
   []
 ];
-
 function crearPaginaDialogo(bloques) {
+  const total = bloques.reduce((suma, [, texto]) => suma + texto.length, 0);
+  const tamano =
+    total <= 200 ? "tam-g" :
+    total <= 400 ? "tam-m" :
+    total <= 550 ? "tam-p" : "tam-xp";
+
   const parrafos = bloques
     .map(([autor, texto]) =>
       `<p class="dialogo ${autor === "1" ? "uno" : "dos"}">${escapeHTML(texto)}</p>`
@@ -248,7 +254,7 @@ function crearPaginaDialogo(bloques) {
 
   return `
     <div class="page">
-      <div class="page-content plain dialogo-page">
+      <div class="page-content plain dialogo-page ${tamano}">
         ${parrafos}
       </div>
     </div>
