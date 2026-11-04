@@ -220,8 +220,7 @@ const paginasDialogo = [
   ],
   // Página 17 (izquierda)
   [
-    ["1", `mi peor navidad fue cuando en la secundaria`],
-    ["1", `hice pulseras de la amistad y le rogue a mis papas que me dejaran ir a mi primera fiesta, siempre me ha encantado hacer cosas, yo hago mis propios accesorios.. asi que hice pulseras de amistad para darles a todos en la fiesta como regalo de navidad`]
+    ["1", `mi peor navidad fue cuando en la secundaria hice pulseras de la amistad y le rogue a mis papas que me dejaran ir a mi primera fiesta, siempre me ha encantado hacer cosas, yo hago mis propios accesorios.. asi que hice pulseras de amistad para darles a todos en la fiesta como regalo de navidad`]
   ],
   // Página 18 (derecha)
   [
