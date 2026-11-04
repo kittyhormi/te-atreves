@@ -197,15 +197,15 @@ body {
   font-size: 15px;
   color: #a28e75;
 }
-
-.back-cover {
-  background: linear-gradient(
+.page.back-cover {
+  background: #991c2a !important;
+  background-image: linear-gradient(
     135deg,
     #b52b38 0%,
     #991c2a 50%,
     #741421 100%
-  );
-  border-right: 9px solid #65101b;
+  ) !important;
+  border-right: 9px solid #65101b !important;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.12);
 }
 .open-button {
