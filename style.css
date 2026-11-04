@@ -140,10 +140,10 @@ body {
 }
 
 .riddle-blanks {
-  font-size: 28px;
+  font-family: "DrmHandwritten", "Patrick Hand", cursive;
+  font-size: 34px;
   line-height: 1.8;
 }
-
 .blank {
   display: inline-block;
   border-bottom: 3px dashed #171313;
