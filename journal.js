@@ -49,20 +49,30 @@ function crearPortada() {
 function crearPaginaInicial() {
   return `
     <div class="page">
-      <div class="page-content">
-        <p class="inside-title">Every story begins somewhere...</p>
-        <p class="handwriting" style="margin-top:45px;">
-          Two strangers.
-          One notebook.
-          And a question neither of them
-          expected to answer.
+      <div class="page-content plain">
+        <p class="riddle-question">puedes descifrar la pregunta?</p>
+
+        <p class="riddle-blanks">
+          <span class="blank">v a s</span>
+          <span class="blank">a</span>
+          <span class="blank">e s t a r</span>
         </p>
-        <div class="page-number">1</div>
+
+        <p class="riddle-blanks">
+          <span class="blank">s o l o</span>
+          <span class="blank">e s t a</span>
+          <span class="word-underline">navidad</span> ?
+        </p>
+
+        <p class="riddle-label">pistas :</p>
+
+        <p class="riddle-clue">
+          1. dicen que el orgullo puede impedir que dos personas se conozcan y que los prejuicios pueden hacer que se pierdan de una buena historia.. tus primeras dos palabras se encuentran en su romance: 252, 2, 5/6
+        </p>
       </div>
     </div>
   `;
 }
-
 function crearEntrada(entrada, numero) {
   const clase = entrada.autor === "personaje1"
     ? "writer-one"
